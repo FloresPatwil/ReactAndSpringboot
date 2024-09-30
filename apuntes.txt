@@ -1,2 +1,6 @@
 npm install -g npm                      inicializar npm en el proyecto
 npx create-react-app proyect001         crear proyect001
+
+////////////////////////////
+Appjs => index.js => index.html => su div root => demas htmls
+////////////////////////////
