@@ -1,6 +1,30 @@
 npm install -g npm                      inicializar npm en el proyecto
 npx create-react-app proyect001         crear proyect001
-
+------------------------------------------------------------------------
+function realizarOperacion(e) {
+    e.preventDefault();
+    const v1 = parseInt(e.target.valor1.value);
+    const v2 = parseInt(e.target.valor2.value);
+    const suma = v1 + v2 ;
+    alert('La suma es: ' + suma);
+  }
+  return (
+    <div>
+      <form onSubmit={realizarOperacion}>
+        <p>Ingrese el primer valor 1
+          <input type="number" name="valor1" />
+        </p>
+        <p>Ingrese el segundo valor2
+          <input type="number" name="valor2" />
+        </p>
+        <p> 
+          <input type="submit" value="Sumar" />
+        </p>
+      </form> 
+    </div>
+  )
+------------------------------------------------------------------------
+hook = gancho de estados 
 ////////////////////////////
 Appjs => index.js => index.html => su div root => demas htmls
 ////////////////////////////
