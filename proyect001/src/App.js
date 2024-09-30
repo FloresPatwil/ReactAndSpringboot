@@ -3,15 +3,21 @@ import './App.css';
 
 function App() {
   
-  function generarAleatorio() {
-    const v = Math.trunc(Math.random() * 100);
-    setValor(v);
+  function generarAleatorios() {
+    const vector = new Array(5);
+    for(let x = 0; x < vector.length; x ++ ){
+      vector[x] = Math.trunc(Math.random() * 100);
+    } 
+    setNumeros(vector);
   }
-  const [numero,setValor] = React.useState(0);
+  const [numeros,setNumeros] = React.useState([0,0,0,0,0]);
   return (
     <div>
-      <p>Numero aleatorio : {numero}</p>
-      <button onClick={generarAleatorio}>Generar aleatorio</button>
+      <p>Numeros aleatorios : {numeros}</p>
+      { numeros.map(num => (
+        <p>{num}</p>
+      ))}
+      <button onClick={generarAleatorios}>Generar valores aleatorios aleatorio</button>
     </div>
     // <div className="App">
     //   <header className="App-header">
