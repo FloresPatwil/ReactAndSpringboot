@@ -1,37 +1,28 @@
 import React from 'react';
 import './App.css';
 
-// function retornarNumeroAleatorio(){
-//   return Math.trunc(Math.random * 10);
-// }
-function mostrarTitulo(Titulo){
-  return <h1>{Titulo}</h1>
-}
 function App() {
-  const title = 'Fin';
-  const siglo = 21;
-  const persona = {
-    nombre : 'Christian',
-    edad: '17'
-  }
-  function retornarNumeroAleatorio(){
-    return Math.trunc(Math.random() * 10);
+  
+  function realizarOperacion(e) {
+    e.preventDefault();
+    const v1 = parseInt(e.target.valor1.value);
+    const v2 = parseInt(e.target.valor2.value);
+    const suma = v1 + v2 ;
+    alert('La suma es: ' + suma);
   }
   return (
     <div>
-      {mostrarTitulo('Hola mundo')}
-      {mostrarTitulo(title)}
-      <hr/>
-      <h1>Titulo nivel 1</h1>
-      <hr/>
-      <p>Estamos en siglo {siglo}</p>
-      <h3>Accesos a un objeto</h3>
-      <p>{persona.nombre} tiene {persona.edad} años</p>
-      <h3>Lllamada a una funcion</h3>
-      <p>Un valor Aleatorio</p>
-      <p>{retornarNumeroAleatorio()}</p>
-      <h3>Calculo inmediato de expresiones</h3>
-      3 + 3 = {3 + 3}
+      <form onSubmit={realizarOperacion}>
+        <p>Ingrese el primer valor 1
+          <input type="number" name="valor1" />
+        </p>
+        <p>Ingrese el segundo valor2
+          <input type="number" name="valor2" />
+        </p>
+        <p> 
+          <input type="submit" value="Sumar" />
+        </p>
+      </form> 
     </div>
     // <div className="App">
     //   <header className="App-header">
